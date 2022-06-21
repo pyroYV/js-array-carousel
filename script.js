@@ -9,16 +9,18 @@ const arrayImg = ['https://cdn.photographycourse.net/wp-content/uploads/2022/04/
 'https://iso.500px.com/wp-content/uploads/2021/02/Torres-Del-Paine-Sunset-By-Paul-Reiffer-2-1500x1000.jpg',
 'https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg'];
 
-const newImg = document.createElement('img');
-
-newImg.classList.add('w-100','img-fix');
 
 const carouselWrapper = document.getElementById('carousel-wrapper');
 const imgList = carouselWrapper.children;
 
 for (let index = 0; index < arrayImg.length; index++) {
-   
+    
+    const newImg = document.createElement('img');
+    newImg.classList.add('w-100','img-fix',);
+    newImg.setAttribute('src',arrayImg[index]);
     carouselWrapper.append(newImg);
-    newImg.setAttribute('src',arrayImg[0]);
+    if(carouselIndex===index){
+        newImg.classList.add('active')
+    }
     
 }

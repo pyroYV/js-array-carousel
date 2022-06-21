@@ -1,3 +1,12 @@
 .img-fix{
     
 }
+
+#carousel-wrapper img{
+    display: none;
+
+}
+
+#carousel-wrapper img.active{
+    display: block;
+}
