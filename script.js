@@ -9,6 +9,8 @@ let carouselIndex = 1;
 const carouselWrapper = document.getElementById('carousel-wrapper');
 const imgList = carouselWrapper.children;
 
+
+
 for (let index = 0; index < arrayImg.length; index++) {
     const newImg = document.createElement('img');
     newImg.classList.add('w-100','img-fix',);
@@ -20,14 +22,7 @@ imgList[carouselIndex].classList.add('active')
 const nextButton = document.getElementById('next');
 const backButton = document.getElementById('back');
 
-nextButton.addEventListener('click', function(){
-   imgList[carouselIndex].classList.remove('active');
-    carouselIndex++;
-        if(carouselIndex === arrayImg.length){
-            carouselIndex = 0;
-        }
-        imgList[carouselIndex].classList.add('active');
-})
+nextButton.addEventListener('click', next)
 
 back.addEventListener('click', function(){
     imgList[carouselIndex].classList.remove('active');
@@ -37,3 +32,14 @@ back.addEventListener('click', function(){
          }
          imgList[carouselIndex].classList.add('active');
  })
+
+function next(){
+    imgList[carouselIndex].classList.remove('active');
+    carouselIndex++;
+        if(carouselIndex === arrayImg.length){
+            carouselIndex = 0;
+        }
+        imgList[carouselIndex].classList.add('active');
+}
+
+setInterval (next, 3000)
